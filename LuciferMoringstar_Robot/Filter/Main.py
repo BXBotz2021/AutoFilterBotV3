@@ -275,17 +275,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
                 return
         elif query.data == "help":
+            invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
             buttons = [
                 [
-                    InlineKeyboardButton('Making Video', url=f'{TUTORIAL}')
+                    InlineKeyboardButton('🔰 Updates Channel 🔰', url=invite_link.invite_link)
                 ]
                 ]
             await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "about":
+            invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
             buttons = [
                 [
-                    InlineKeyboardButton('Making Video', url=f'{TUTORIAL}')
+                    InlineKeyboardButton('🔰 Updates Channel 🔰', url=invite_link.invite.link)
                 ]
                 ]
             await query.message.edit(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
@@ -305,10 +307,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         print(e)
                         f_caption=f_caption
                 if f_caption is None:
+                    invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('🖥️ How To Own 🖥️', url=f'{TUTORIAL}')
+                        InlineKeyboardButton('🔰 Updates Channel 🔰', url=invite_link.invite.link)
                     ]
                     ]
                 
@@ -336,10 +339,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         print(e)
                         f_caption=f_caption
                 if f_caption is None:
+                    invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
                     f_caption = f"{title}"
                 buttons = [
                     [
-                        InlineKeyboardButton('🖥️ How To Own 🖥️', url=f'{TUTORIAL}')
+                        InlineKeyboardButton('🔰 Updates Channel 🔰', url=invite_link.invite_link)
                     ]
                     ]
                 
