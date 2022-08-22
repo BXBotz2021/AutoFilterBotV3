@@ -336,6 +336,10 @@ async def bot_info(bot, message):
     await message.reply(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
-    START_TEXT = """Hello {mention}
+    START_TEXT = """Hello {mention},
 
-    PICS = """
+__Iam A Simple AutoFilter Bot. I Can Provide Movies, Just Add Me To A Group As Admin And Enjoy 😍_
+
+Made By [Alshan 🤵](https://t.me/AlshanTG)"""
+
+    PICS = "
