@@ -14,10 +14,10 @@ HELP = """
 Basic Commads
 
 /start :- check am Alive
+/stats user Status
 
 Bot Owner Only
 /broadcast Replay Any Message or Media
-/stats user Status
 /ban_user  click ban_user more info
 /unban_user click unban_user more info
 /banned_users Banned User Details
@@ -28,14 +28,11 @@ Bot Owner Only
 """
 
 ABOUT = """
-➥ Name :  Auto Filter V3
+🔸 Name :  Auto Filter V3
     
-➥ Creator : [Naughty PROFESSOR](
-https://youtube.com/c/NaughtyPROFESSOR)
+🔸 Creator : [Alshan ✅](https://t.me/AlshanTG)
 
-➥ Language : Python3
+🔸 Language : Python3
 
-➥ Library : Pyrogram Asyncio 1.13.0
-
-➥ Tutorial : [Click Me](https://youtu.be/5hnYOKBzyi8)
+🔸 Library : Pyrogram Asyncio 1.13.0)
 """
