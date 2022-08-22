@@ -82,9 +82,10 @@ async def start(bot, message):
                         f_caption=f_caption
                 if f_caption is None:
                     f_caption = f"{files.file_name}"
+                    invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
                 buttons = [
                     [
-                        InlineKeyboardButton('🎖 DEPLOY YOURS 🎖', url=f'{TUTORIAL}')
+                        InlineKeyboardButton('🔰 Update Channel 🔰', url=invite_link.invite_link)
                     ]
                     ]
                 await bot.send_cached_media(
@@ -115,7 +116,7 @@ async def start(bot, message):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [[
-                InlineKeyboardButton("Search Here", switch_inline_query_current_chat='')
+                InlineKeyboardButton("Search 🔍", switch_inline_query_current_chat='')
                 ],[
                 InlineKeyboardButton("Help", callback_data="help"),
                 InlineKeyboardButton("About", callback_data="about")
@@ -167,9 +168,6 @@ async def broadcast_handler_open(_, m):
 
 @Client.on_message(filters.private & filters.command("stats"))
 async def sts(c, m):
-    if m.from_user.id not in ADMIN_ID:
-        await m.delete()
-        return
     await m.reply_text(
         text=f"**Total Users in Database 📂:** `{await db.total_users_count()}`\n\n**Total Users with Notification Enabled 🔔 :** `{await db.total_notif_users_count()}`",
         parse_mode="Markdown",
@@ -328,10 +326,11 @@ async def delete(bot, message):
         await msg.edit('File not found in database')
 @Client.on_message(filters.command('about'))
 async def bot_info(bot, message):
+    invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
     buttons = [
         [
             
-            InlineKeyboardButton('Deploy Video', url=f'{TUTORIAL}')
+            InlineKeyboardButton('Updates Channel', url=invite_link.invite_link)
         ]
         ]
     await message.reply(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
