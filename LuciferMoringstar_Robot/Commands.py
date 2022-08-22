@@ -110,10 +110,10 @@ async def start(bot, message):
             )
         )
     else:
-        await message.reply_text(
-            START_MSG,
+        await message.reply_photo(
+            photo=random.choice(PICS)
+            caption=START_TEXT.format(message.from_user.mention),
             parse_mode="Markdown",
-            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [[
                 InlineKeyboardButton("🔍 sᴇᴀʀᴄʜ ꜰɪʟᴇ ꜰʀᴏᴍ ᴄʜᴀᴛ 🔍", switch_inline_query_current_chat='')
@@ -334,3 +334,8 @@ async def bot_info(bot, message):
         ]
         ]
     await message.reply(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
+
+    START_TEXT = """Hello {mention}
+
+    PICS = """
