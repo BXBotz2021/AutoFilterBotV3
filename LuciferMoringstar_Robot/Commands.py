@@ -176,7 +176,7 @@ async def broadcast_handler_open(_, m):
 @Client.on_message(filters.private & filters.command("stats"))
 async def sts(c, m):
     await m.reply_text(
-        text=f"**Total Users in Database 📂:** `{await db.total_users_count()}`\n\n**Total Users with Notification Enabled 🔔 :** `{await db.total_notif_users_count()}`\n\n📁 Saved files: `await Media.count_documents()`",
+        text=f"**Total Users in Database 📂:** `{await db.total_users_count()}`\n\n**Total Users with Notification Enabled 🔔 :** `{await db.total_notif_users_count()}`\n\n📁 Saved files: `{await Media.count_documents()}`",
         parse_mode="Markdown",
         quote=True
     )
