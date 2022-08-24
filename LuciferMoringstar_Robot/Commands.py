@@ -343,5 +343,4 @@ __Iam A Simple AutoFilter Bot. I Can Provide Movies, Just Add Me To A Group As A
 
 Made By [Alshan 🤵](https://t.me/AlshanTG)"""
 
-    PICS = "https://telegra.ph/file/80104c519475b93f34faf.jpg,
-           "https://telegra.ph/file/80104c519475b93f34faf.jpg"
+    PICS = "https://telegra.ph/file/80104c519475b93f34faf.jpg https://telegra.ph/file/80104c519475b93f34faf.jpg"
