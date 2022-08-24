@@ -112,7 +112,7 @@ async def start(bot, message):
         )
     else:
         await message.reply_photo(
-            photo=random.choice(PICS),
+            photo="https://telegra.ph/file/80104c519475b93f34faf.jpg",
             caption=START_TEXT.format(message.from_user.mention),
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup(
@@ -343,4 +343,3 @@ __Iam A Simple AutoFilter Bot. I Can Provide Movies, Just Add Me To A Group As A
 
 Made By [Alshan 🤵](https://t.me/AlshanTG)"""
 
-    PICS = "https://telegra.ph/file/80104c519475b93f34faf.jpg https://telegra.ph/file/80104c519475b93f34faf.jpg"
