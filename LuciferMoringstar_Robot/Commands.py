@@ -17,6 +17,13 @@ LOG_CHANNEL = BROADCAST_CHANNEL
 
 db = Database(DB_URL, SESSION)
 
+START_TXT = """Hello {},
+
+__Iam A Simple AutoFilter Bot. I Can Provide Movies, Just Add Me To A Group As Admin And Enjoy 😍_
+
+Made By [Alshan 🤵](https://t.me/AlshanTG)
+"""
+
 @Client.on_message(filters.command("start"))
 async def start(bot, message):
     chat_id = message.from_user.id
@@ -113,8 +120,7 @@ async def start(bot, message):
     else:
         await message.reply_photo(
             photo="https://telegra.ph/file/80104c519475b93f34faf.jpg",
-            caption=START_TEXT.format(message.from_user.mention),
-            parse_mode="Markdown",
+            caption=START_TXT.format(message.from_user.mention),
             reply_markup=InlineKeyboardMarkup(
                 [[
                 InlineKeyboardButton("🔍 sᴇᴀʀᴄʜ ꜰɪʟᴇ ꜰʀᴏᴍ ᴄʜᴀᴛ 🔍", switch_inline_query_current_chat='')
@@ -337,9 +343,4 @@ async def bot_info(bot, message):
     await message.reply(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
-    START_TEXT = """Hello {mention},
-
-__Iam A Simple AutoFilter Bot. I Can Provide Movies, Just Add Me To A Group As Admin And Enjoy 😍_
-
-Made By [Alshan 🤵](https://t.me/AlshanTG)"""
 
